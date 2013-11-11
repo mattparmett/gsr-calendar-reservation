@@ -1,5 +1,3 @@
-#main.rb - executable code using pcr api
-
 require './gsr.rb'
 require 'json'
 require 'date'
