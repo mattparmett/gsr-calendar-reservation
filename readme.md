@@ -10,11 +10,13 @@ I had already written a Ruby front end to the GSR reservation mobile site, allow
 
 Essentially, that's all that's happening here, even though there are many moving parts.  The only configuration needed is the creation of two Heroku environment variables: `username` and `password`, containing your Spike username and password, through `heroku config:set`.
 
-Simply upload the app to Heroku, create the two variables, and set your `ifttt-webhook` configuration accordingly.   Now you can be lazy and make GSR reservations from your calendar -- killing two birds (making the reservation and making an associated event in your calendar) with one stone.  Only events with titles containing the word "GSR" will be converted into GSR reservations.
+Simply upload the app to Heroku, create the two variables, and set your `ifttt-webhook` configuration accordingly.   Now you can be lazy and make GSR reservations from your calendar -- killing two birds (making the reservation and making an associated event in your calendar) with one stone.  Only events with titles containing the word "GSR" will be converted into GSR reservations.  Note that the only confirmation of a successful reservation will be Spike's automated email, and because of the 15 minute IFTTT refresh interval that email may not come for 15-20 minutes.
 
 ## Misc.
 
 This app also contains a route, `POST /cancel`, that will call the GSR module's `cancel()` function.  This will cancel your closest GSR reservation.  (Beware -- `cancel()` hasn't been tested too rigorously -- just through casual, one-reservation use.)
+
+There is very little error checking included in the GSR module -- this is mostly designed for personal use, and for the most part it's easy to avoid making reservation requests that will result in an error.
 
 ## Extensions
 
