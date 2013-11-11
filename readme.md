@@ -8,13 +8,9 @@ With IFTTT ([If This Then That](http://ifttt.com)), it's possible to watch a Goo
 
 I had already written a Ruby front end to the GSR reservation mobile site, allowing me to programmatically create GSR reservations given a time, duration, and (optionally) desired floor.  I could easily wrap this inside a simple Sinatra webapp, and call that webapp to make a reservation when IFTTT finds a new event called "GSR" in my calendar.
 
-Essentially, that's all that's happening here, even though there are many moving parts.  The only configuration needed is the creation of a `credentials.rb` file containing your Spike username and password in the following format:
+Essentially, that's all that's happening here, even though there are many moving parts.  The only configuration needed is the creation of two Heroku environment variables: `username` and `password`, containing your Spike username and password, through `heroku config:set`.
 
-```$username: '[username]'
-$password: '[password]'
-```
-
-Then, simply upload the app to Heroku and set your `ifttt-webhook` configuration accordingly.   Now you can be lazy and make GSR reservations from your calendar -- killing two birds (making the reservation and making an associated event in your calendar) with one stone.
+Simply upload the app to Heroku, create the two variables, and set your `ifttt-webhook` configuration accordingly.   Now you can be lazy and make GSR reservations from your calendar -- killing two birds (making the reservation and making an associated event in your calendar) with one stone.
 
 ## Extensions
 
