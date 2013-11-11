@@ -10,7 +10,7 @@ I had already written a Ruby front end to the GSR reservation mobile site, allow
 
 Essentially, that's all that's happening here, even though there are many moving parts.  The only configuration needed is the creation of two Heroku environment variables: `username` and `password`, containing your Spike username and password, through `heroku config:set`.
 
-Simply upload the app to Heroku, create the two variables, and set your `ifttt-webhook` configuration accordingly.   Now you can be lazy and make GSR reservations from your calendar -- killing two birds (making the reservation and making an associated event in your calendar) with one stone.
+Simply upload the app to Heroku, create the two variables, and set your `ifttt-webhook` configuration accordingly.   Now you can be lazy and make GSR reservations from your calendar -- killing two birds (making the reservation and making an associated event in your calendar) with one stone.  Only events with titles containing the word "GSR" will be converted into GSR reservations.
 
 ## Misc.
 
