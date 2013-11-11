@@ -9,9 +9,6 @@ class App < Sinatra::Base
 	post '/' do
 		gsr = GSR.new(ENV['username'], ENV['password'])
 		requestData = JSON.parse(request.body.read)
-		#Expect categories param to be:
-		#[year, month, day, hour, minute duration]
-		#
 		#Expect email body to be:
 		#year, month, day, hour, minute, duration
 		reservation = requestData['title'].split(',')
