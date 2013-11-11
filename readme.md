@@ -12,6 +12,10 @@ Essentially, that's all that's happening here, even though there are many moving
 
 Simply upload the app to Heroku, create the two variables, and set your `ifttt-webhook` configuration accordingly.   Now you can be lazy and make GSR reservations from your calendar -- killing two birds (making the reservation and making an associated event in your calendar) with one stone.
 
+## Misc.
+
+This app also contains a route, `POST /cancel`, that will call the GSR module's `cancel()` function.  This will cancel your closest GSR reservation.  (Beware -- `cancel()` hasn't been tested too rigorously -- just through casual, one-reservation use.)
+
 ## Extensions
 
 If there were a better interface to the GSR reservation site, we could use the event description to perhaps indicate certain Pennkeys to invite to the GSR, or indicate a room preference, etc.
